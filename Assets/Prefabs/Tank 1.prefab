@@ -81,8 +81,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  speedRotation: 2
-  thrust: 10
+  speedRotation: 3
+  thrust: 14
   maxSpeed: 10
   IndexObject: 0
 --- !u!114 &7757618126302155814

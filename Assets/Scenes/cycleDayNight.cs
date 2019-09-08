@@ -14,7 +14,7 @@ public class cycleDayNight : MonoBehaviour
 
     public static float t;
 
-    int daysPassed;
+    public static int daysPassed;
     public static int hoursPassed;
     bool passed = true;
     bool dayPassed = true;
@@ -24,10 +24,8 @@ public class cycleDayNight : MonoBehaviour
     public event EventHandler DayElapsed;
     public event EventHandler HourElapsed;
 
-    // Start is called before the first frame update
     void Start()
     {
-        DayElapsed += CycleDayNight_DayElapsed;
         HourElapsed += CycleDayNight_HourElapsed;
 
         daysPassed = 0;
@@ -39,17 +37,13 @@ public class cycleDayNight : MonoBehaviour
         if(hoursPassed == 23)
         {
             hoursPassed = 0;
+            daysPassed++;
         }
         else
         {
             hoursPassed++;
         }
         
-    }
-
-    private void CycleDayNight_DayElapsed(object sender, EventArgs e)
-    {
-        daysPassed++; ;
     }
 
     void Update()

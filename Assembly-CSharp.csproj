@@ -62,12 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\BattleManager.cs" />
     <Compile Include="Assets\Scenes\cycleDayNight.cs" />
+    <Compile Include="Assets\Scripts\BattleManager.cs" />
+    <Compile Include="Assets\Scripts\CanvasInfo.cs" />
     <Compile Include="Assets\Scripts\disparoTank.cs" />
     <Compile Include="Assets\Scripts\enemyHealth.cs" />
     <Compile Include="Assets\Scripts\enemyMove.cs" />
-    <Compile Include="Assets\Scripts\lightController.cs" />
     <Compile Include="Assets\Scripts\movementScript.cs" />
     <Compile Include="Assets\Scripts\projetil.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />

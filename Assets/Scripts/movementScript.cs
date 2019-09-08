@@ -7,10 +7,14 @@ public class movementScript : MonoBehaviour
     public float force;
     public Rigidbody rb;
     public float maxSpeed;
+    public GameObject nightVision;
+
+    private bool toggleBool;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        toggleBool = false;
     }
 
     void Update()
@@ -20,6 +24,14 @@ public class movementScript : MonoBehaviour
         {
             rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxSpeed);
         }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Switch();
+            nightVision.SetActive(toggleBool);
+        }
+
+        print(toggleBool);
     }
 
     void FixedUpdate()
@@ -30,5 +42,17 @@ public class movementScript : MonoBehaviour
 
         rb.AddForce(moveVertical * transform.forward * force);
         rb.AddTorque(new Vector3(0, 5f * moveHorizontal, 0));
+    }
+
+    void Switch()
+    {
+        if (toggleBool == true)
+        {
+            toggleBool = false;
+        }
+        else
+        { 
+            toggleBool = true;
+        }
     }
 }

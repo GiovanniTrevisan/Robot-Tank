@@ -26,18 +26,18 @@ public class SpawnEnemy : MonoBehaviour
 
         //print(enemyNum);
 
-        if(enemyNum < 3)
+        if (enemyNum < cycleDayNight.daysPassed+1)
         {
-            StartCoroutine("SpawnEnemyCoroutine");
+            Instantiate(enemy, spanwPoints[IndexObject].transform.position, Quaternion.identity);
+            //StartCoroutine("SpawnEnemyCoroutine");
         }
 
 
 
     }
 
-    IEnumerator SpawnEnemyCoroutine()
-    {
-        Instantiate(enemy, spanwPoints[IndexObject].transform.position, Quaternion.identity);
-        yield return new WaitForSeconds(5f);
-    }
+    //IEnumerator SpawnEnemyCoroutine()
+    //{
+    //    yield return new WaitForSeconds(5f);
+    //}
 }
