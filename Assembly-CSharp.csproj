@@ -62,13 +62,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\disparoTank.cs" />
-    <Compile Include="Assets\lightController.cs" />
-    <Compile Include="Assets\movementScript.cs" />
-    <Compile Include="Assets\projetil.cs" />
+    <Compile Include="Assets\BattleManager.cs" />
     <Compile Include="Assets\Scenes\cycleDayNight.cs" />
+    <Compile Include="Assets\Scripts\disparoTank.cs" />
     <Compile Include="Assets\Scripts\enemyHealth.cs" />
     <Compile Include="Assets\Scripts\enemyMove.cs" />
+    <Compile Include="Assets\Scripts\lightController.cs" />
+    <Compile Include="Assets\Scripts\movementScript.cs" />
+    <Compile Include="Assets\Scripts\projetil.cs" />
+    <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\WorldCurver.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Users/Public/Documents/Unity Projects/ROBOT TANK/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
