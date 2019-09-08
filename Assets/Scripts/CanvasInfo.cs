@@ -11,7 +11,8 @@ public class CanvasInfo : MonoBehaviour
     //CANVAS
     public Text tanquesAbatidosText;
     public static int tanquesAbatidos;
-
+    public Slider mySlider;
+    public static float recarregarDisparo;
 
     void Start()
     {
@@ -22,5 +23,6 @@ public class CanvasInfo : MonoBehaviour
     void Update()
     {
         tanquesAbatidosText.text = tanquesAbatidos.ToString();
+        mySlider.value = recarregarDisparo;
     }
 }

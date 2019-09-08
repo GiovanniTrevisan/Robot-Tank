@@ -30,8 +30,6 @@ public class movementScript : MonoBehaviour
             Switch();
             nightVision.SetActive(toggleBool);
         }
-
-        print(toggleBool);
     }
 
     void FixedUpdate()

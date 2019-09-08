@@ -24,8 +24,6 @@ public class SpawnEnemy : MonoBehaviour
 
         IndexObject = Random.Range(0, (spanwPoints.Length));
 
-        //print(enemyNum);
-
         if (enemyNum < cycleDayNight.daysPassed+1)
         {
             Instantiate(enemy, spanwPoints[IndexObject].transform.position, Quaternion.identity);
