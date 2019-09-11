@@ -14,7 +14,7 @@ public class SpawnEnemy : MonoBehaviour
     void Start()
     {
         enemyNum = 0;
-        StartCoroutine("SpawnEnemyCoroutine");
+        //StartCoroutine("SpawnEnemyCoroutine");
     }
 
     void Update()
