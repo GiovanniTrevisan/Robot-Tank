@@ -16,6 +16,11 @@ public class enemyMove : MonoBehaviour
     void Start()
     {
 
+        followObjects[0] = GameObject.Find("FollowPoint (1)");
+        followObjects[1] = GameObject.Find("FollowPoint (2)");
+        followObjects[2] = GameObject.Find("FollowPoint (3)");
+        followObjects[3] = GameObject.Find("FollowPoint (4)");
+
         Rigidbody = GetComponent<Rigidbody>();
 
         IndexObject = Random.Range(0, (followObjects.Length));
@@ -25,12 +30,6 @@ public class enemyMove : MonoBehaviour
 
     private void Update()
     {
-        
-        followObjects[0] = GameObject.Find("FollowPoint (1)");
-        followObjects[1] = GameObject.Find("FollowPoint (2)");
-        followObjects[2] = GameObject.Find("FollowPoint (3)");
-        followObjects[3] = GameObject.Find("FollowPoint (4)");
-
         Rigidbody.velocity = Vector3.ClampMagnitude(Rigidbody.velocity, maxSpeed);
     }
 
