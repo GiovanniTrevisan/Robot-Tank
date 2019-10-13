@@ -8,7 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: TankMat
-    second: {fileID: 2100000, guid: a838b89330864db4ea8c5164fc7e7a39, type: 2}
+    second: {fileID: 2100000, guid: 130ba659575fcf64dbff6b2c2bb2c684, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

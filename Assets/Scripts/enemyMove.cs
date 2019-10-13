@@ -21,16 +21,15 @@ public class enemyMove : MonoBehaviour
         IndexObject = Random.Range(0, (followObjects.Length));
         StartCoroutine(mudarDirecao(3f));
 
-    }
-
-    private void Update()
-    {
-        
         followObjects[0] = GameObject.Find("FollowPoint (1)");
         followObjects[1] = GameObject.Find("FollowPoint (2)");
         followObjects[2] = GameObject.Find("FollowPoint (3)");
         followObjects[3] = GameObject.Find("FollowPoint (4)");
 
+    }
+
+    private void Update()
+    {
         Rigidbody.velocity = Vector3.ClampMagnitude(Rigidbody.velocity, maxSpeed);
     }
 

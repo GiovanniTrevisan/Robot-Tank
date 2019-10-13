@@ -66,6 +66,7 @@
     <Compile Include="Assets\Scripts\BattleManager.cs" />
     <Compile Include="Assets\Scripts\CanvasInfo.cs" />
     <Compile Include="Assets\Scripts\disparoTank.cs" />
+    <Compile Include="Assets\Scripts\enemyAttack.cs" />
     <Compile Include="Assets\Scripts\enemyHealth.cs" />
     <Compile Include="Assets\Scripts\enemyMove.cs" />
     <Compile Include="Assets\Scripts\movementScript.cs" />
