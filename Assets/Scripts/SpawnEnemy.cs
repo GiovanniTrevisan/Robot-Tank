@@ -6,7 +6,7 @@ public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemy;
     public GameObject[] spanwPoints;
-    public int IndexObject;
+    private int IndexObject;
 
     private int enemyNum;
 

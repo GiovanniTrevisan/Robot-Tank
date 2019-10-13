@@ -6,10 +6,12 @@ public class enemyAttack : MonoBehaviour
 {
 
     public GameObject cannon;
-    public GameObject projectile;
+    public Rigidbody projectile;
     public GameObject pointSpawn;
     public float time = 2f;
     public float speedRotation = 1f;
+
+    public float velocidade;
 
     private float timeDelta;
     GameObject player;
@@ -24,7 +26,7 @@ public class enemyAttack : MonoBehaviour
         timeDelta += Time.deltaTime;
         if (timeDelta >= time)
         {
-            Instantiate(projectile, pointSpawn.transform.position, cannon.transform.rotation);
+            Disparar();
             timeDelta = 0;
         }
     }
@@ -36,4 +38,13 @@ public class enemyAttack : MonoBehaviour
         rotation.z = 0;
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speedRotation);
     }
+
+    void Disparar()
+    {
+        Rigidbody clone;
+        clone = (Rigidbody)Instantiate(projectile, pointSpawn.transform.position, cannon.transform.rotation);
+        clone.velocity = pointSpawn.transform.TransformDirection(Vector3.forward * velocidade * 10);
+        print(clone.velocity);
+    }
 }
+
