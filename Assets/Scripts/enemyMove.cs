@@ -16,16 +16,24 @@ public class enemyMove : MonoBehaviour
     void Start()
     {
 
-        Rigidbody = GetComponent<Rigidbody>();
-
-        IndexObject = Random.Range(0, (followObjects.Length));
-        StartCoroutine(mudarDirecao(3f));
-
         followObjects[0] = GameObject.Find("FollowPoint (1)");
         followObjects[1] = GameObject.Find("FollowPoint (2)");
         followObjects[2] = GameObject.Find("FollowPoint (3)");
         followObjects[3] = GameObject.Find("FollowPoint (4)");
 
+        Rigidbody = GetComponent<Rigidbody>();
+
+        IndexObject = Random.Range(0, (followObjects.Length));
+        StartCoroutine(mudarDirecao(3f));
+
+<<<<<<< HEAD
+        followObjects[0] = GameObject.Find("FollowPoint (1)");
+        followObjects[1] = GameObject.Find("FollowPoint (2)");
+        followObjects[2] = GameObject.Find("FollowPoint (3)");
+        followObjects[3] = GameObject.Find("FollowPoint (4)");
+
+=======
+>>>>>>> 7da8066eeb197e196173b88e80a18fcbffaa69dc
     }
 
     private void Update()
