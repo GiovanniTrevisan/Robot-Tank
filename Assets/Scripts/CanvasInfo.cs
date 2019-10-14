@@ -14,6 +14,9 @@ public class CanvasInfo : MonoBehaviour
     public Slider mySlider;
     public static float recarregarDisparo;
 
+    public Text lifeText;
+
+
     void Start()
     {
         tanquesAbatidos = 0;
@@ -23,6 +26,7 @@ public class CanvasInfo : MonoBehaviour
     void Update()
     {
         tanquesAbatidosText.text = tanquesAbatidos.ToString();
+        lifeText.text = PlayerHealth.life.ToString();
         mySlider.value = recarregarDisparo;
     }
 }

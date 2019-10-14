@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class projetil : MonoBehaviour
 {
+    void Start()
+    {
+        Destroy(gameObject, 3.25f);
+    }
 
     void OnCollisionEnter(Collision collision)
     {
@@ -18,6 +22,8 @@ public class projetil : MonoBehaviour
 
         if (collision.gameObject.tag == ("MainCamera"))
         {
+
+            PlayerHealth.life -= 1;
 
             print("-1 de vida");
 

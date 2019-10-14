@@ -26,6 +26,7 @@ public class SpawnEnemy : MonoBehaviour
 
         if (enemyNum < cycleDayNight.daysPassed+1)
         {
+            //print(enemyNum);
             Instantiate(enemy, spanwPoints[IndexObject].transform.position, Quaternion.identity);
             //StartCoroutine("SpawnEnemyCoroutine");
         }

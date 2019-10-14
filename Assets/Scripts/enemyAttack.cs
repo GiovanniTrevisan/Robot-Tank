@@ -9,7 +9,7 @@ public class enemyAttack : MonoBehaviour
     public Rigidbody projectile;
     public GameObject pointSpawn;
     public float time = 2f;
-    public float speedRotation = 1f;
+    public float speedRotation;
 
     public float velocidade;
 

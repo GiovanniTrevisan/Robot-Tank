@@ -20,7 +20,7 @@ public class disparoTank : MonoBehaviour
     {
 
         fireRateTimer += Time.deltaTime;
-        CanvasInfo.recarregarDisparo = fireRateTimer;
+        CanvasInfo.recarregarDisparo = fireRateTimer * 1.25f;
 
         if (Input.GetButtonDown("Fire1") && fireRateTimer >= fireRateLimite)
         {
