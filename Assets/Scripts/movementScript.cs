@@ -34,12 +34,32 @@ public class movementScript : MonoBehaviour
 
     void FixedUpdate()
     {
+        
 
         float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
 
-        rb.AddForce(moveVertical * transform.forward * force);
+        if (damageTracker.trackLeftDamaged && moveHorizontal < 0)
+        {
+            moveHorizontal = 0;
+        }
+
+        if (damageTracker.trackRightDamaged && moveHorizontal > 0)
+        {
+            moveHorizontal = 0;
+        }
+
+        if (!damageTracker.trackLeftDamaged && !damageTracker.trackRightDamaged)
+        {
+            float moveVertical = Input.GetAxis("Vertical");
+            rb.AddForce(moveVertical * transform.forward * force);
+        }
+        else
+        {
+            rb.AddForce(moveHorizontal * transform.forward * force * -0.75f);
+        }
+
         rb.AddTorque(new Vector3(0, 5f * moveHorizontal, 0));
+
     }
 
     void Switch()
@@ -49,7 +69,7 @@ public class movementScript : MonoBehaviour
             toggleBool = false;
         }
         else
-        { 
+        {
             toggleBool = true;
         }
     }

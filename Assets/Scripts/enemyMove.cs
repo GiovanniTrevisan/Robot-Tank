@@ -38,12 +38,15 @@ public class enemyMove : MonoBehaviour
 
         //transform.rotation(0f, transform.rotation.y, 0f);
 
-        var rotation = Quaternion.LookRotation(followObjects[IndexObject].transform.position - transform.position);
-        rotation.x = 0;
-        rotation.z = 0;
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speedRotation);
-        //transform.LookAt(followObjects[IndexObject].transform);
-        Rigidbody.AddForce(transform.forward * thrust);
+        if (followObjects[IndexObject] != null)
+        {
+            var rotation = Quaternion.LookRotation(followObjects[IndexObject].transform.position - transform.position);
+            rotation.x = 0;
+            rotation.z = 0;
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speedRotation);
+            //transform.LookAt(followObjects[IndexObject].transform);
+            Rigidbody.AddForce(transform.forward * thrust);
+        }
     }
 
     public void SwitchIndex() 

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Inimigo
   - NightVision
+  - DanoPlayer_TpCritico
+  - Lado_direito
+  - Lado_esquerdo
+  - Lado_traseira
   layers:
   - Default
   - TransparentFX

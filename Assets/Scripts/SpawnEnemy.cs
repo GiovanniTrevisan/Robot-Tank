@@ -14,7 +14,6 @@ public class SpawnEnemy : MonoBehaviour
     void Start()
     {
         enemyNum = 0;
-        //StartCoroutine("SpawnEnemyCoroutine");
     }
 
     void Update()
@@ -24,19 +23,12 @@ public class SpawnEnemy : MonoBehaviour
 
         IndexObject = Random.Range(0, (spanwPoints.Length));
 
-        if (enemyNum < cycleDayNight.daysPassed+1)
+        if (enemyNum < cycleDayNight.daysPassed + 1)
         {
-            //print(enemyNum);
-            Instantiate(enemy, spanwPoints[IndexObject].transform.position, Quaternion.identity);
-            //StartCoroutine("SpawnEnemyCoroutine");
+            if (spanwPoints[IndexObject] != null)
+            {
+                Instantiate(enemy, spanwPoints[IndexObject].transform.position, Quaternion.identity);
+            }
         }
-
-
-
     }
-
-    //IEnumerator SpawnEnemyCoroutine()
-    //{
-    //    yield return new WaitForSeconds(5f);
-    //}
 }

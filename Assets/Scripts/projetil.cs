@@ -7,7 +7,7 @@ public class projetil : MonoBehaviour
 {
     void Start()
     {
-        Destroy(gameObject, 3.25f);
+        Destroy(gameObject, 5.25f);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -18,14 +18,18 @@ public class projetil : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
             CanvasInfo.tanquesAbatidos++;
+
+            if (CanvasInfo.tanquesAbatidos % 10 == 0)
+            {
+                PlayerHealth.life += 1;
+            }
+
         }
 
         if (collision.gameObject.tag == ("MainCamera"))
         {
 
             PlayerHealth.life -= 1;
-
-            print("-1 de vida");
 
         }
     }

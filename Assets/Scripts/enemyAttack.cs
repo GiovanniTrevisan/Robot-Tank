@@ -33,10 +33,13 @@ public class enemyAttack : MonoBehaviour
 
     void FixedUpdate()
     {
-        var rotation = Quaternion.LookRotation(player.transform.position - transform.position);
-        rotation.x = 0;
-        rotation.z = 0;
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speedRotation);
+        if (player != null)
+        {
+            var rotation = Quaternion.LookRotation(player.transform.position - transform.position);
+            rotation.x = 0;
+            rotation.z = 0;
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * speedRotation);
+        }
     }
 
     void Disparar()
@@ -44,7 +47,6 @@ public class enemyAttack : MonoBehaviour
         Rigidbody clone;
         clone = (Rigidbody)Instantiate(projectile, pointSpawn.transform.position, cannon.transform.rotation);
         clone.velocity = pointSpawn.transform.TransformDirection(Vector3.forward * velocidade * 10);
-        print(clone.velocity);
     }
 }
 
