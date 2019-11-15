@@ -39,11 +39,24 @@ public class CanvasInfo : MonoBehaviour
         }
         else if (damageTracker.trackRightDamaged)
         {
+            StartCoroutine(BlinkText());
             trackIndicatorText.color = Color.red;
         }
         else if (damageTracker.trackLeftDamaged)
         {
+            StartCoroutine(BlinkText());
             trackIndicatorText.color = Color.red;
+        }
+    }
+    public IEnumerator BlinkText()
+    {
+        //blink it forever. You can set a terminating condition depending upon your requirement
+        while (true)
+        {
+            trackIndicatorText.text = "";
+            yield return new WaitForSeconds(.5f);
+            trackIndicatorText.text = "T";
+            yield return new WaitForSeconds(.5f);
         }
     }
 }

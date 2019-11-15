@@ -27,7 +27,7 @@ public class damageTracker : MonoBehaviour
 
         porc = Random.Range(0, 100);
 
-        if (porc < 50)
+        if (porc < 35)
         {
             if (col == "Lado_direito" && !trackRightDamaged)
             {
