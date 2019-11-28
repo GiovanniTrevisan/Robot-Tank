@@ -14,6 +14,9 @@ public class CanvasInfo : MonoBehaviour
     public Slider mySlider;
     public static float recarregarDisparo;
     public Text trackIndicatorText;
+    public Text radarIndicatorText;
+
+    public GameObject radarTexture;
 
     public Text lifeText;
 
@@ -48,6 +51,17 @@ public class CanvasInfo : MonoBehaviour
             trackIndicatorText.color = Color.red;
         }
     }
+
+    public void disableRadar()
+    {
+        if (damageRadar.radarDamaged)
+        {
+            radarTexture.SetActive(false);
+            radarIndicatorText.color = Color.black;
+        }
+    }
+
+
     public IEnumerator BlinkText()
     {
         //blink it forever. You can set a terminating condition depending upon your requirement

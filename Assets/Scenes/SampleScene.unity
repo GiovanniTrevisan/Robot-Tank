@@ -287,6 +287,7 @@ GameObject:
   m_Component:
   - component: {fileID: 58380090}
   - component: {fileID: 58380091}
+  - component: {fileID: 58380092}
   m_Layer: 0
   m_Name: Lado_traseira
   m_TagString: Lado_traseira
@@ -321,6 +322,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 3, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &58380092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58380089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb418c52ed756f4abaf0088693f9b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &61772884
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +460,8 @@ MonoBehaviour:
   tanquesAbatidosText: {fileID: 1734623094}
   mySlider: {fileID: 536381472}
   trackIndicatorText: {fileID: 712652945}
+  radarIndicatorText: {fileID: 130018566}
+  radarTexture: {fileID: 738407078}
   lifeText: {fileID: 316150890}
 --- !u!1 &94211829
 GameObject:
@@ -527,7 +542,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &130018565
 RectTransform:
   m_ObjectHideFlags: 0
@@ -544,7 +559,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 150, y: -15.8}
+  m_AnchoredPosition: {x: 88, y: -12.2}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &130018566
