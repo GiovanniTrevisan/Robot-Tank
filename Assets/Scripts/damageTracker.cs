@@ -25,25 +25,27 @@ public class damageTracker : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        porc = Random.Range(0, 100);
-
-        if (porc < 35)
+        if (other.gameObject.tag == "projetil")
         {
-            if (col == "Lado_direito" && !trackRightDamaged)
+            porc = Random.Range(0, 100);
+
+            if (porc < 35)
             {
-                trackRightDamaged = true;
-                print("tracker direito Quebrou");
-                canvas.GetComponent<CanvasInfo>().changeColorTrackerInd();
+                if (col == "Lado_direito" && !trackRightDamaged)
+                {
+                    trackRightDamaged = true;
+                    print("tracker direito Quebrou");
+                    canvas.GetComponent<CanvasInfo>().changeColorTrackerInd();
+                }
+
+                if (col == "Lado_esquerdo" && !trackLeftDamaged)
+                {
+                    trackLeftDamaged = true;
+                    print("tracker esquerdo Quebrou");
+
+                    canvas.GetComponent<CanvasInfo>().changeColorTrackerInd();
+                }
             }
-
-            if (col == "Lado_esquerdo" && !trackLeftDamaged)
-            {
-                trackLeftDamaged = true;
-                print("tracker esquerdo Quebrou");
-
-                canvas.GetComponent<CanvasInfo>().changeColorTrackerInd();
-            }
-
         }
     }
 }

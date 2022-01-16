@@ -21,16 +21,17 @@ public class damageRadar : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        porc = Random.Range(0, 100);
-
-        if (porc < 100)
+        if (other.gameObject.tag == "projetil")
         {
-            if (col == "Lado_traseira" && !radarDamaged)
+            porc = Random.Range(0, 100);
+            if (porc < 100)
             {
-                radarDamaged = true;
-                print("Radar Quebrou");
-                canvas.GetComponent<CanvasInfo>().disableRadar();
+                if (col == "Lado_traseira" && !radarDamaged)
+                {
+                    radarDamaged = true;
+                    print("Radar Quebrou");
+                    canvas.GetComponent<CanvasInfo>().disableRadar();
+                }
             }
         }
     }

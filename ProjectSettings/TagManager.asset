@@ -10,6 +10,7 @@ TagManager:
   - Lado_direito
   - Lado_esquerdo
   - Lado_traseira
+  - projetil
   layers:
   - Default
   - TransparentFX
