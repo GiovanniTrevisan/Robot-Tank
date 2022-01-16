@@ -24,17 +24,27 @@ public class cycleDayNight : MonoBehaviour
     public event EventHandler DayElapsed;
     public event EventHandler HourElapsed;
 
+    private Color colorFog;
+    private Color colorFogDay;
+
+    private bool isLerping;
+
+
     void Start()
     {
         HourElapsed += CycleDayNight_HourElapsed;
 
         daysPassed = 0;
         hoursPassed = 15;
+
+        isLerping = false;
+        colorFogDay = RenderSettings.fogColor;
     }
 
     private void CycleDayNight_HourElapsed(object sender, EventArgs e)
     {
-        if(hoursPassed == 23)
+
+        if (hoursPassed == 23)
         {
             hoursPassed = 0;
             daysPassed++;
@@ -43,11 +53,22 @@ public class cycleDayNight : MonoBehaviour
         {
             hoursPassed++;
         }
-        
+
     }
 
     void Update()
     {
+        if (!isLerping)
+        {
+            if (hoursPassed > 19 || hoursPassed < 8)
+            {
+                StartCoroutine(LerpFunction(Color.black, 3.5f));
+            }
+            else
+            {
+                StartCoroutine(LerpFunction(colorFogDay, 2f));
+            }
+        }
 
         hours.text = hoursPassed.ToString();
         day.text = daysPassed.ToString();
@@ -90,5 +111,21 @@ public class cycleDayNight : MonoBehaviour
     public class HourElapsedEventArgs : EventArgs
     {
         public int CurrentHour { get; set; }
+    }
+
+    IEnumerator LerpFunction(Color endValue, float duration)
+    {
+        float time = 0;
+        Color startValue = RenderSettings.fogColor;
+
+        while (time < duration)
+        {
+            isLerping = true;
+            RenderSettings.fogColor = Color.Lerp(startValue, endValue, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        isLerping = false;
+        RenderSettings.fogColor = endValue;
     }
 }

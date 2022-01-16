@@ -30,6 +30,7 @@ public class movementScript : MonoBehaviour
         {
             Switch();
             nightVision.SetActive(toggleBool);
+            RenderSettings.fogDensity = toggleBool ? 0.005f : 0.015f;
         }
     }
 
